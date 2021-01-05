@@ -1,13 +1,55 @@
 <section class="orders-show">
 
   <header class="page-header">
+
+  <%= @order.line_items.inspect %>
+
     <h1>Order #<%= @order.id %></h1>
   </header>
 
   <div class="order-summary jumbotron">
     <h4>Thank you for your order!</h4>
   </div>
+    
+
+
+<table class="table table-bordered">
+      <thead>
+        <tr>
+          <th colspan="2">Product</th>
+          <th>Unit Price</th>
+          <th>Quantity</th>
+          <th>Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= render @order.line_items %>
+      </tbody>
+      <tfoot>
+        <tr>
+          <th colspan="4">
+            TOTAL:
+          </th>
+          <th>
+            <%= @order.total %>
+          </th>
+        </tr>
+      </tfoot>
+    </table>
+
+
+
+
+
 
   <%= link_to "Continue Shopping", root_path, class: 'btn btn-lg btn-primary' %>
 
 </section>
+
+
+<%# id: 4, 
+total_cents: 248375, 
+created_at: "2021-01-05 20:21:58", 
+updated_at: "2021-01-05 20:21:58", 
+stripe_charge_id: "ch_1I6M5vGfuAXqMlxWLlwwuXhV", 
+email: "kvirani@gmail.com" %>
