@@ -11,8 +11,6 @@ class UsersController < ApplicationController
       redirect_to '/signup'
     end
   end
-  def authenticate_with_credentials(params[:email], params[:password])
-  end
   def user_params
     params.require(:user).permit(
       :name, 
